@@ -5,7 +5,7 @@
     "Nathan Fitzsimmons <nathandfitzsimmons@gmail.com>"
   ],
   "description": "Element query and resize listening for jQuery websites.",
-  "main": "jquery.elementquery.js",
+  "main": "src/jquery.elementquery.js",
   "keywords": [
     "element",
     "query",
