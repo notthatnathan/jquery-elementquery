@@ -6,13 +6,16 @@ Demo: http://notthatnathan.github.io/demos/jquery-elementquery/
 ##Usage
 After installing and loading (see below), two main features are made available, element queries (for CSS styling) and element resizing listening (for JS applications).
 
+`px` is the only supported unit at this time.
+
 ###Element Query
 ####Basic
 ```
-// js
+// js, pass an array of your queries
 $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
 
-// css
+// css, use max-width, min-width, max-height, or min-height attribute selectors
+// be sure to include the 'px'
 .element[max-width="900px"] {
   //your styles for <= 900px
 }
@@ -36,14 +39,14 @@ $('.element').on('elementResize', function() {
   console.log($(this).width(), $(this).height());
 });
 
-// You can also use the plugin wrapper instead of the envent,
+// You can also use the plugin wrapper instead of the event,
 // if you're more comfortable with that syntax
 $('.element').elementResize(function() {
   console.log($(this).width(), $(this).height());
 });
 ```
 
-If resizing listening is the only functionality you'll need in your entire project (no dimension-based CSS), use [jquery-elementresize](https://github.com/rbtbar/jquery-elementresize).
+If resizing listening is the only functionality you'll need in your entire project (no 'element query' CSS), don't use this plugin, use [jquery-elementresize](https://github.com/rbtbar/jquery-elementresize) instead.
 
 #Installation
 ##Install using Bower
@@ -71,7 +74,7 @@ require('[path]/jquery.elementquery');
 // CommonJS also supported
 ```
 
-When using AMD, I recommend making jquery.elementresize a dependency using a shim.
+When using AMD, I recommend making `jquery.elementresize` a dependency using a shim.
 ```
 requirejs.config({
   shim: {
