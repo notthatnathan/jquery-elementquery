@@ -2,7 +2,7 @@
     'use strict';
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['jquery'], factory);    
+        define(['jquery'], fn);    
     } else if (typeof exports === 'object') {
         // Node/CommonJS style for Browserify/Webpack
         module.exports = fn(require('jquery'));
