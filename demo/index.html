@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EQ Demo</title>
+	<style>
+		/*reset*/
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		strong, span {
+			font-weight: bold;
+		}
+		.container {
+			margin: 20px auto;
+			text-align: center;
+		}
+		.tester,
+		.tester2 {
+			position: relative;
+			width: 250px;
+			height: 200px;
+			background-color: green;
+			
+			-webkit-transition: all 500ms ease-out;
+			-moz-transition: all 500ms ease-out;
+			transition: all 500ms ease-out;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			margin: 0 auto 20px auto;
+		}
+		.tester2 {
+			width: 300px;
+			height: 400px;
+		}
+		p, button {
+			margin-bottom: 20px;
+		}
+		.tester.wide {
+			width: 300px;
+		}
+		.tester.tall {
+			height: 300px;
+		}
+		.tester2.wide {
+			width: 500px;
+		}
+		.tester2.tall {
+			height: 300px;
+		}
+		.tester[max-width="299px"] {
+			background-color: pink;
+		}
+		.tester[min-width="300px"] {
+			background-color: purple;
+		}
+		.tester[max-height="249px"] {
+			border-radius: 15px;
+		}
+		.tester[min-height="250px"] {
+			border-radius: 30px;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="../bower_components/jquery-elementresize/dist/jquery.elementresize.js"></script>
+	<script src="../src/jquery.elementquery.js"></script>
+</head>
+<body>
+<div class="container">
+	<button>Toggle Widths</button>
+	<p class="one">The tester below uses CSS attribute selectors to adjust <strong>border-radius</strong> and <strong>background-color</strong>, as well as a callback to update dimensions in the next sentence.<br />Tester is <span class="wide"></span>px wide and <span class="tall"></span>px tall.</p>
+	<div class="tester"></div>
+	<p class="two">The tester below uses a standalone <strong>elementResize</strong> event to update dimensions in the next sentence, but does not set attributes for CSS.<br />Tester is <span class="wide"></span>px wide and <span class="tall"></span>px tall.</p>
+	<div class="tester2"></div>
+</div>
+<script>
+$(document).ready(function() {
+	$('button').on('click',function() {
+		$('.tester').toggleClass('wide tall');
+		$('.tester2').toggleClass('wide tall');
+	});
+
+	$('.tester2').on('elementResize', function() {
+		var $el = $(this);
+		$('p.two span.wide').text($el.width());
+		$('p.two span.tall').text($el.height());
+	});
+
+	var breakpoints = ['min-width: 300','max-width: 299','max-height:249px','min-height: 250'];
+	$('.tester').elementQuery(breakpoints, function() {
+		var $el = $(this);
+		$('p.one span.wide').text($el.width());
+		$('p.one span.tall').text($el.height());
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "jquery-elementquery",
+  "version": "0.0.0",
+  "authors": [
+    "Nathan Fitzsimmons <nathandfitzsimmons@gmail.com>"
+  ],
+  "description": "Element query and resize listening for jQuery websites.",
+  "main": "jquery.elementquery.js",
+  "keywords": [
+    "element",
+    "query",
+    "resize"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-elementresize": "~0.2.1"
+  }
+}
