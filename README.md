@@ -55,7 +55,7 @@ bower install jquery-elementquery --save
 ##Install without Bower
 This plugin depends on the excellent [jquery-elementresize](https://github.com/rbtbar/jquery-elementresize) by [Robert Bar](https://github.com/rbtbar).
 
-– Download or clone [jquery-elementresize](https://github.com/rbtbar/jquery-elementresize)
+- Download or clone [jquery-elementresize](https://github.com/rbtbar/jquery-elementresize)
 - Download or clone jquery-elementquery (this repo)
 
 ##Loading the plugin
