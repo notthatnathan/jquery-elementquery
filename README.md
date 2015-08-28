@@ -10,10 +10,11 @@ After installing and loading (see below), two main features are made available, 
 
 ###Element Query
 ####Basic
-```
+```js
 // js, pass an array of your queries
 $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
-
+```
+```css
 // css, use max-width, min-width, max-height, or min-height attribute selectors
 // be sure to include the 'px'
 .element[max-width="900px"] {
@@ -25,7 +26,7 @@ $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
 ```
 
 ####With a callback
-```
+```js
 // js
 $('.element').elementQuery(['min-width: 800'], function() {
   console.log($(this).width(), $(this).height());
@@ -34,7 +35,7 @@ $('.element').elementQuery(['min-width: 800'], function() {
 
 ###Element Resize Listener
 You can use `jquery.elementresize` alone if you only need to know about resize changes in your JavaScript and won't be using CSS. After requiring or loading jquery.elementresize only:
-```
+```js
 $('.element').on('elementResize', function() {
   console.log($(this).width(), $(this).height());
 });
@@ -62,11 +63,12 @@ This plugin depends on the excellent [jquery-elementresize](https://github.com/r
 - Download or clone jquery-elementquery (this repo)
 
 ##Loading the plugin
-```
+```html
 // plain js, assuming jQuery is already loaded
 <script src="[path]/jquery.elementresize.js"></script>
 <script src="[path]/jquery.elementquery.js"></script>
-
+```
+```js
 // or in an AMD module
 require('[path]/jquery.elementresize');
 require('[path]/jquery.elementquery');
@@ -75,7 +77,7 @@ require('[path]/jquery.elementquery');
 ```
 
 When using AMD, I recommend making `jquery.elementresize` a dependency using a shim.
-```
+```js
 requirejs.config({
   shim: {
     '[path]/jquery.elementquery': {
