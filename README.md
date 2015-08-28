@@ -4,7 +4,7 @@ Since media queries only get you so far, this plugin allows you to style element
 Demo: http://notthatnathan.github.io/demos/jquery-elementquery/
 
 ##Usage
-After installing and loading (see below), two main features are made available, 
+After installing and loading (see below), two main features are made available, element queries (for CSS styling) and element resizing listening (for JS applications).
 
 ###Element Query
 ####Basic
