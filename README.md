@@ -1,7 +1,7 @@
 # jQuery elementQuery
 Since media queries only get you so far, this plugin allows you to style elements based on their parent container's changing size, instead of the window's. This allows for more flexibility in styling elements independently of the browser viewport's dimensions.
 
-Demo: [coming soon]
+Demo: http://notthatnathan.github.io/demos/jquery-elementquery/
 
 ##Usage
 After installing and loading (see below), two main features are made available, 
