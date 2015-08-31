@@ -120,17 +120,18 @@ $(document).ready(function() {
 		$('.tester2').toggleClass('wide tall');
 	});
 
-	$('.tester2').on('elementResize', function() {
+	$('.tester2').on('elementResize', function(dims) {
 		var $el = $(this);
-		$('p.two span.wide').text($el.width());
-		$('p.two span.tall').text($el.height());
+		$('p.two span.wide').text(dims.width);
+		$('p.two span.tall').text(dims.height);
 	});
 
 	var breakpoints = ['min-width: 300','max-width: 299','max-height:249px','min-height: 250'];
-	$('.tester').elementQuery(breakpoints, function() {
+	$('.tester').elementQuery(breakpoints, function(dims) {
+		console.log(dims);
 		var $el = $(this);
-		$('p.one span.wide').text($el.width());
-		$('p.one span.tall').text($el.height());
+		$('p.one span.wide').text(dims.width);
+		$('p.one span.tall').text(dims.height);
 	});
 });
 </script>

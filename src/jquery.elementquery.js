@@ -13,7 +13,7 @@
 }(function ($) {    
     'use strict';        
     
-    function setBreakpointAtts($el, breakpoints) {        
+    function setBreakpointAtts($el, breakpoints, callback) {        
         // current dims of element
         var w = $el.width(),
             h = $el.height();
@@ -36,6 +36,11 @@
             // set attrs on jq object
             $el.attr(bp[0], attr);
         });
+
+        // fire callback
+        if (callback && typeof(callback) === "function") {
+            callback.call($el,{width: w, height: h});
+        }
     }
 
     function breakupBreakpoint(bp) {
@@ -55,11 +60,7 @@
     $.fn.elementQuery = function(breakpoints, callback) {
         var $el = $(this);
         $el.on('elementResize', function() {
-            setBreakpointAtts($el, breakpoints);
-            // fire callback
-            if (callback && typeof(callback) === "function") {
-                callback.call($el);
-            }
+            setBreakpointAtts($el, breakpoints, callback);
         });
     };
 }));
