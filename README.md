@@ -28,8 +28,9 @@ $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
 ####With a callback
 ```js
 // js
-$('.element').elementQuery(['min-width: 800'], function() {
-  console.log($(this).width(), $(this).height());
+$('.element').elementQuery(['min-width: 800'], function(dims) {
+  //dims contains current width and height
+  console.log(dims.width, dims.height);
 });
 ```
 
