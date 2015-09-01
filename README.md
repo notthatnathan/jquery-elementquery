@@ -82,7 +82,7 @@ When using AMD, I recommend making `jquery.elementresize` a dependency using a s
 requirejs.config({
   	shim: {
     		'[path]/jquery.elementquery': {
-			deps: ['jquery','[path]/jquery.elementresize']
+			deps: ['jquery', '[path]/jquery.elementresize']
 		}
 	}
 });
