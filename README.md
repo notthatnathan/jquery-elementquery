@@ -25,10 +25,10 @@ $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
 }
 /* max-width, min-width, max-height, or min-height attribute selectors */
 .element[max-width="900px"] {
-	//your styles for <= 900px
+	/* your styles for <= 900px */
 }
 .element[min-width="901px"] {
-	//your styles for >= 901px
+	/* your styles for >= 901px */
 }
 ```
 
