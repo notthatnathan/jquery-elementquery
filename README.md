@@ -13,7 +13,7 @@ After installing and loading (see below), two main features are made available, 
 $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
 ```
 ```css
-// max-width, min-width, max-height, or min-height attribute selectors
+/* max-width, min-width, max-height, or min-height attribute selectors */
 .element[max-width="900px"] {
   //your styles for <= 900px
 }
