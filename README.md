@@ -33,14 +33,14 @@ $('.element').elementQuery(['min-width: 800'], function(dims) {
 ```
 
 ###Element Resize Listener
-You can use `jquery.elementresize` alone if you only need to know about resize changes in your JavaScript and won't be using CSS. After requiring or loading jquery.elementresize only:
+You can use the `elementResize` event alone.
 ```js
 $('.element').on('elementResize', function() {
   console.log($(this).width(), $(this).height());
 });
 ```
 
-If resizing listening is the only functionality you'll need in your entire project (no CSS), don't use this plugin, use [jquery-elementresize](https://github.com/rbtbar/jquery-elementresize) instead.
+However, if resizing listening in JavaScript is the only functionality you'll need in your entire project (no CSS), use [jquery-elementresize](https://github.com/rbtbar/jquery-elementresize) instead of this plugin.
 
 #Installation
 ##Install using Bower
