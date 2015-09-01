@@ -77,7 +77,7 @@ require('[path]/jquery.elementresize');
 require('[path]/jquery.elementquery');
 ```
 
-When using AMD, I recommend making `jquery.elementresize` a dependency using a shim.
+When using requirejs, I recommend making `jquery.elementresize` a dependency using a shim.
 ```js
 requirejs.config({
   	shim: {
