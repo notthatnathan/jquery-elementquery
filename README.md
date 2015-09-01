@@ -1,5 +1,9 @@
 # jQuery elementQuery
-Since media queries only get you so far, this plugin allows you to style elements based on their parent container's changing size, instead of the window's. This allows for more flexibility in styling elements independently of the browser viewport's dimensions.
+elementQuery allows you to style elements based on their parent container's changing size, not the window's. You can read more about the concept in [Smashing Magazine's article](http://www.smashingmagazine.com/2013/06/media-queries-are-not-the-answer-element-query-polyfill/).
+
+The difference between elementQuery and the polyfill referenced in the SM article is that this one doesn't rely solely on window resize, just the resize of the parent element.
+
+The difference between elementQuery and the popular [css-element-queries](https://github.com/marcj/css-element-queries) (and a few others) is that no scrollable elements are introduced, which in our testing were causing visible scrollbars, intercepted drag/scroll targets, and poor performance (sometimes browser-freezing).
 
 Demo: http://notthatnathan.github.io/demos/jquery-elementquery/
 
@@ -7,18 +11,24 @@ Demo: http://notthatnathan.github.io/demos/jquery-elementquery/
 After installing and loading (see below), two main features are made available, element queries (for CSS styling) and element resizing listening (for JS applications).
 
 ###Element Query
+
+
 ####Basic
 ```js
 // pass an array of your queries
 $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
 ```
 ```css
+/* your .element must be positioned (relative, absolute), not static. */
+.element {
+	position: relative;
+}
 /* max-width, min-width, max-height, or min-height attribute selectors */
 .element[max-width="900px"] {
-  //your styles for <= 900px
+	//your styles for <= 900px
 }
 .element[min-width="901px"] {
-  //your styles for >= 901px
+	//your styles for >= 901px
 }
 ```
 
