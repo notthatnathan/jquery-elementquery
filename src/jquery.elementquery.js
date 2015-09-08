@@ -13,7 +13,7 @@
 }(function ($) {    
     'use strict';        
     
-    function setBreakpointAtts($el, breakpoints, callback) {        
+    function setBreakpointAttrs($el, breakpoints, callback) {        
         // current dims of element
         var w = $el.width(),
             h = $el.height();
@@ -65,7 +65,7 @@
 
         //then listen for changes
         $el.on('elementResize', function() {
-            setBreakpointAtts($el, breakpoints, callback);
+            setBreakpointAttrs($el, breakpoints, callback);
         });
     };
 }));
