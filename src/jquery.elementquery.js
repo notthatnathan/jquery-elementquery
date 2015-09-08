@@ -59,6 +59,11 @@
 
     $.fn.elementQuery = function(breakpoints, callback) {
         var $el = $(this);
+
+        //fire once initially
+        setBreakpointAttrs($el, breakpoints, callback);
+
+        //then listen for changes
         $el.on('elementResize', function() {
             setBreakpointAtts($el, breakpoints, callback);
         });
