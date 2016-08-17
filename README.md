@@ -1,9 +1,9 @@
 # jQuery elementQuery
 elementQuery allows you to style elements based on their parent container's changing size, not the window's. You can read more about the concept in [Smashing Magazine's article](http://www.smashingmagazine.com/2013/06/media-queries-are-not-the-answer-element-query-polyfill/).
 
-The difference between elementQuery and the polyfill referenced in the SM article is that this one doesn't rely solely on window resize, **just the resize of the parent element**. If your element resizes because you manually adjusted its width/height, or another element's changing size affects your element, this plugin will adjust CSS as necessary.
+The difference between elementQuery and the polyfill referenced in the SM article is that this one doesn't rely solely on window resize, **just the resize of the parent element**. If your element resizes because you manually adjusted its width/height, or another element's changing size affects your element, our plugin will adjust CSS as necessary.
 
-The difference between elementQuery and the popular [css-element-queries](https://github.com/marcj/css-element-queries) (and a few others) is that no scrollable elements are introduced, which in our testing were causing visible scrollbars, intercepted drag/scroll targets, and poor performance (sometimes browser-freezing).
+The difference between elementQuery and the popular [css-element-queries](https://github.com/marcj/css-element-queries) (and a few others) is that no scrollable elements are introduced, which in our testing were causing visible scrollbars, intercepted drag/scroll targets, and poor performance (sometimes browser-freezing). Instead, our plugin uses events on nested iframes, via the required `jquery-elementresize` plugin. The demo below demonstrates how smooth and accurate this is.
 
 Demo: http://notthatnathan.github.io/demos/jquery-elementquery/
 
