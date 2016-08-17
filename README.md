@@ -90,3 +90,6 @@ requirejs.config({
 // then only require jquery.elementquery in your AMD module
 require('[path]/jquery.elementquery');
 ```
+
+## TODO
+- [ ] Remove jQuery requirement
