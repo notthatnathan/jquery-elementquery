@@ -7,13 +7,13 @@ The difference between elementQuery and the popular [css-element-queries](https:
 
 Demo: http://notthatnathan.github.io/demos/jquery-elementquery/
 
-##Usage
+## Usage
 After installing and loading (see below), two main features are made available, element queries (for CSS styling) and element resizing listening (for JS applications).
 
-###Element Query
+### Element Query
 
 
-####Basic
+#### Basic
 ```js
 // pass an array of your queries
 $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
@@ -32,7 +32,7 @@ $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
 }
 ```
 
-####With a callback
+#### With a callback
 ```js
 $('.element').elementQuery(['min-width: 800'], function(dims) {
   //dims contains current width and height
@@ -42,7 +42,7 @@ $('.element').elementQuery(['min-width: 800'], function(dims) {
 });
 ```
 
-###Element Resize Listener
+### Element Resize Listener
 You can use the `elementResize` event alone.
 ```js
 $('.element').on('elementResize', function() {
@@ -52,20 +52,20 @@ $('.element').on('elementResize', function() {
 
 However, if resizing listening in JavaScript is the only functionality you'll need in your entire project (no CSS), use [jquery-elementresize](https://github.com/rbtbar/jquery-elementresize) instead of this plugin.
 
-#Installation
-##Install using Bower
+# Installation
+## Install using Bower
 Dependencies will be installed for you.
 ```
 bower install jquery-elementquery --save
 ```
 
-##Install without Bower
+## Install without Bower
 This plugin depends on the excellent [jquery-elementresize](https://github.com/rbtbar/jquery-elementresize) by [Robert Bar](https://github.com/rbtbar).
 
 - Download or clone [jquery-elementresize](https://github.com/rbtbar/jquery-elementresize)
 - Download or clone jquery-elementquery (this repo)
 
-##Loading the plugin
+## Loading the plugin
 ```html
 <!-- assuming jQuery is already loaded -->
 <script src="[path]/jquery.elementresize.js"></script>
