@@ -58,7 +58,7 @@ npm install jquery-elementquery --save
 
 ## Contributing
 
-It would be cool to rewrite the underlying `jquery-elementresize` and this to not require jQuery. I could also use help writing some tests.
+It would be cool to rewrite the underlying this plugin and the `jquery-elementresize` to not require jQuery (under a different name). I could also use help writing some tests.
 
 ## License
 
