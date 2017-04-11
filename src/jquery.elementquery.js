@@ -6,7 +6,7 @@
         define(['jquery', 'jquery-elementresize'], factory);
     } else if (typeof exports === 'object') {
         // Node/CommonJS style for Browserify/Webpack
-        module.exports = factory(require('jquery'));
+        module.exports = factory(require('jquery'), require('jquery-elementresize'));
     } else {
         // Browser globals
         factory(jQuery);
