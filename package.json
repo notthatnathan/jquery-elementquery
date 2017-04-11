@@ -1,6 +1,6 @@
 {
   "name": "jquery-elementquery",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Element queries for jQuery.",
   "main": "src/jquery.elementquery.js",
   "scripts": {
