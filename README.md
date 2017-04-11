@@ -4,7 +4,6 @@ elementQuery allows you to style elements based on their parent container's chan
 This is different from media queries in that it targets the size of a specific element, regardless of whether the window size has changed.
 
 ## Usage
-After installing and loading (see below), two main features are made available, element queries (for CSS styling) and element resizing listening (for JS applications).
 
 #### Basic
 ```
@@ -16,10 +15,12 @@ $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
 .element {
 	position: relative;
 }
+
 /* max-width, min-width, max-height, or min-height attribute selectors */
 .element[max-width="900px"] {
 	/* your styles for <= 900px */
 }
+
 .element[min-width="901px"] {
 	/* your styles for >= 901px */
 }
@@ -28,16 +29,19 @@ $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
 #### With a callback
 ```
 $('.element').elementQuery(['min-width: 800'], function(dims) {
+
   //dims contains current width and height
   console.log(dims.width, dims.height);
+
   // 'this' references .element
   console.log($(this).width(), $(this).height());
+
 });
 ```
 
 ## Motivation
 
-I could not find an elementquery plugin that did not:
+I could not find an elementquery option that did not:
 
 - **Rely on window resize.** It seemed silly to listen for window resize events when the *element* may or may not resize as a result of that.
 - **Rely on introducing scrolling elements.** These caused visible scrollbars and sluggish performance.
@@ -58,4 +62,4 @@ It would be cool to rewrite the underlying `jquery-elementresize` and this to no
 
 ## License
 
-MIT.
+MIT
