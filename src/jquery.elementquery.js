@@ -1,19 +1,20 @@
-(function (fn) {
+(function (factory) {
     'use strict';
+
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['jquery'], fn);    
+        define(['jquery', 'jquery-elementresize'], factory);
     } else if (typeof exports === 'object') {
         // Node/CommonJS style for Browserify/Webpack
-        module.exports = fn(require('jquery'));
+        module.exports = factory(require('jquery'));
     } else {
-        // no dependency management
-        fn(jQuery);
+        // Browser globals
+        factory(jQuery);
     }
-}(function ($) {    
-    'use strict';        
-    
-    function setBreakpointAttrs($el, breakpoints, callback) {        
+}(function ($) {
+    'use strict';
+
+    function setBreakpointAttrs($el, breakpoints, callback) {
         // current dims of element
         var w = $el.width(),
             h = $el.height();
@@ -24,7 +25,7 @@
 
             // we'll set every attr initially
             var attr = '';
-                
+
             // find breakpoint matches
             if ((bp[0] === 'min-width' && w >= bp[1]) ||
                 (bp[0] === 'max-width' && w <= bp[1]) ||
@@ -50,10 +51,10 @@
         bp = bp.replace(/px/g,'');
         // split at colon
         bp = bp.split(':');
-        
+
         // recast numbers as int
         bp[1] = parseInt(bp[1]);
-        
+
         return bp;
     }
 

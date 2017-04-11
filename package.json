@@ -1,0 +1,38 @@
+{
+  "name": "jquery-elementquery",
+  "version": "1.0.0",
+  "description": "Element queries for jQuery.",
+  "main": "src/jquery.elementquery.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notthatnathan/jquery-elementquery.git"
+  },
+  "keywords": [
+    "jquery",
+    "elementquery",
+    "elementresize",
+    "mediaquery",
+    "resize",
+    "element",
+    "query",
+    "responsive",
+    "rwd"
+  ],
+  "author": "Nathan Fitzsimmons",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/notthatnathan/jquery-elementquery/issues"
+  },
+  "homepage": "https://github.com/notthatnathan/jquery-elementquery#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-elementresize": "^0.2.2"
+  }
+}
