@@ -41,10 +41,10 @@ $('.element').elementQuery(['min-width: 800'], function(dims) {
 
 ## Motivation
 
-I could not find an elementquery option that did not:
+I could not find an elementquery option that:
 
-- **Rely on window resize.** It seemed silly to listen for window resize events when the *element* may or may not resize as a result of that.
-- **Rely on introducing scrolling elements.** These caused visible scrollbars and sluggish performance.
+- **Did not rely on window resize.** It seemed silly to listen for window resize events when the *element* may or may not resize as a result of that.
+- **Did not rely on introducing scrolling elements.** These caused visible scrollbars and sluggish performance.
 
 This plugin does not rely on either technique, so accurately reports resizes on the element itself, and only introduces a single empty iframe that shows no scrollbars and reports its resize the same way that `window` would.
 
