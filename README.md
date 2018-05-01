@@ -17,12 +17,20 @@ $('.element').elementQuery(['max-width: 900', 'min-width: 901']);
 }
 
 /* max-width, min-width, max-height, or min-height attribute selectors */
-.element[max-width="900px"] {
+.element[max-width-900="true"] {
 	/* your styles for <= 900px */
 }
 
-.element[min-width="901px"] {
+.element[max-width-900="false"] {
+	/* your styles for > 900 */
+}
+
+.element[min-width-901="true"] {
 	/* your styles for >= 901px */
+}
+
+.element[min-width-901="false"] {
+	/* your styles for < 901px */
 }
 ```
 

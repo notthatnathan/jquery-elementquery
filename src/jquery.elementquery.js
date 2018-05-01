@@ -20,35 +20,39 @@
             h = $el.height();
 
         // loops all breakpoints, set attrs as needed
-        $.each(breakpoints, function(i, bp) {
+        $.each(breakpoints, function (i, bp) {
             bp = breakupBreakpoint(bp);
 
-            // we'll set every attr initially
-            var attr = '';
+            // we'll set every attr initially to false
+            var attr = 'false';
 
             // find breakpoint matches
             if ((bp[0] === 'min-width' && w >= bp[1]) ||
                 (bp[0] === 'max-width' && w <= bp[1]) ||
                 (bp[0] === 'min-height' && h >= bp[1]) ||
                 (bp[0] === 'max-height' && h <= bp[1])) {
-                attr = bp[1] + 'px';
+                attr = 'true';
             }
 
             // set attrs on jq object
-            $el.attr(bp[0], attr);
+            // max-width-480='true'
+            $el.attr(bp[0] + "-" + bp[1], attr);
         });
 
         // fire callback
-        if (callback && typeof(callback) === "function") {
-            callback.call($el,{width: w, height: h});
+        if (callback && typeof (callback) === "function") {
+            callback.call($el, {
+                width: w,
+                height: h
+            });
         }
     }
 
     function breakupBreakpoint(bp) {
         // remove extra spaces
-        bp = bp.replace(/ /g,'');
+        bp = bp.replace(/ /g, '');
         // remove 'px'
-        bp = bp.replace(/px/g,'');
+        bp = bp.replace(/px/g, '');
         // split at colon
         bp = bp.split(':');
 
@@ -58,17 +62,15 @@
         return bp;
     }
 
-    $.fn.elementQuery = function(breakpoints, callback) {
+    $.fn.elementQuery = function (breakpoints, callback) {
         var $el = $(this);
 
         //fire once initially
         setBreakpointAttrs($el, breakpoints, callback);
 
         //then listen for changes
-        $el.on('elementResize', function() {
+        $el.on('elementResize', function () {
             setBreakpointAttrs($el, breakpoints, callback);
         });
     };
 }));
-
-
